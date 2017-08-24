@@ -40,6 +40,7 @@ In order to use this addon you just have to use the component in your templates.
   types='(cities)' //You don't have to pass this value, default value is 'geocode'
   restrictions= restrictionsObjectFromController // You can pass and object with restriction options.
   withGeoLocate= true // You don't have to pass this value, default value is false
+  updateValue= false // You don't have to pass this value, default value is true
 }}
 
 ```
@@ -70,6 +71,7 @@ inputClass             | String : CSS class for the input.
 types                  | String: featured types separate by spaces describing the given result, for more info [Available types](https://developers.google.com/places/supported_types#table3)
 restrictions           | Object: ex. `{country: "us"}`, more info [Component Restrictions](https://developers.google.com/maps/documentation/javascript/examples/geocoding-component-restriction)
 withGeoLocate          | Boolean: ex. `true`, It allows searching places near by the coordinates given into browser. more info [See attribute options.bounds](https://developers.google.com/maps/documentation/javascript/places-autocomplete#add_autocomplete)
+updateValue            | Boolean: Sets whether or not to automatically update the given `value` property with the selected address.      
 latLngBounds           | Object: ex. `{sw: {lat: -34, lng: 151}, ne: {lat: -33, lng: 152}}`, It allows searching places near by the given coordinates. more info [See attribute options.bounds](https://developers.google.com/maps/documentation/javascript/places-autocomplete#add_autocomplete)
 
 

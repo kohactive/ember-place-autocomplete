@@ -12,6 +12,7 @@ export default Component.extend({
   tabindex: 0,
   withGeoLocate: false,
   setValueWithProperty: 'formatted_address',
+  updateValue: true,
 
 
   // @see https://developers.google.com/maps/documentation/javascript/places-autocomplete#set_search_area
@@ -82,11 +83,13 @@ export default Component.extend({
     let place = this.get('autocomplete').getPlace();
     this._callCallback('placeChangedCallback', place);
 
-    if (place[this.get('setValueWithProperty')] !== undefined) {
-      this.set('value', place[this.get('setValueWithProperty')]);
-    } else {
-      // Address not found use value
-      this.set('value', place.name);
+    if( this.get('updateValue') ) {
+      if (place[this.get('setValueWithProperty')] !== undefined) {
+        this.set('value', place[this.get('setValueWithProperty')]);
+      } else {
+        // Address not found use value
+        this.set('value', place.name);
+      }
     }
   },
 
